@@ -1,0 +1,872 @@
+{
+  "model": "haiku",
+  "modelIds": [
+    "claude-haiku-5-5"
+  ],
+  "agent": "Claude Code (claude -p)",
+  "date": "2026-11-27T09:40:07.135Z",
+  "cases": 20,
+  "summary": [
+    {
+      "condition": "with-server",
+      "correct": "20/20",
+      "expectedTool": "20/20",
+      "toolCalls": 21,
+      "toolErrors": 1,
+      "medianSeconds": 4.5,
+      "totalCostUsd": 0.013
+    },
+    {
+      "condition": "no-tools",
+      "correct": "2/20",
+      "expectedTool": "0/20",
+      "toolCalls": 0,
+      "toolErrors": 0,
+      "medianSeconds": 3.6,
+      "totalCostUsd": 0.014
+    }
+  ],
+  "rows": [
+    {
+      "id": "player-title",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "GM",
+      "accepted": [
+        "GM"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_player",
+          "input": {
+            "username": "DrNykterstein"
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 3.8,
+      "costUsd": 0.00054575
+    },
+    {
+      "id": "player-title",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "GM"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 4.3,
+      "costUsd": 0.0006165999999999999
+    },
+    {
+      "id": "player-joined",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "2010-11-22",
+      "accepted": [
+        "2010-11-22"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_player",
+          "input": {
+            "username": "thibault"
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 3.8,
+      "costUsd": 0.0005690100000000001
+    },
+    {
+      "id": "player-joined",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "2010-11-22"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.4,
+      "costUsd": 0.00045529999999999995
+    },
+    {
+      "id": "player-rating",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "3159",
+      "accepted": [
+        "3159"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_player",
+          "input": {
+            "username": "penguingim1"
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 3.9,
+      "costUsd": 0.00056525
+    },
+    {
+      "id": "player-rating",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "3159"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 2.8,
+      "costUsd": 0.0004334
+    },
+    {
+      "id": "player-not-found",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "NOT_FOUND",
+      "accepted": [
+        "NOT_FOUND"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_player",
+          "input": {
+            "username": "zzzz_nope_zzzz_123"
+          }
+        }
+      ],
+      "toolErrors": 1,
+      "turns": 2,
+      "seconds": 4.5,
+      "costUsd": 0.00049867
+    },
+    {
+      "id": "player-not-found",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "NOT_FOUND"
+      ],
+      "expectedTool": "get_player",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.2,
+      "costUsd": 0.0004389
+    },
+    {
+      "id": "recent-wins",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "10",
+      "accepted": [
+        "10"
+      ],
+      "expectedTool": "get_recent_games",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_recent_games",
+          "input": {
+            "username": "DrNykterstein",
+            "perfType": "blitz",
+            "rated": true,
+            "max": 10
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 5.1,
+      "costUsd": 0.0009270400000000001
+    },
+    {
+      "id": "recent-wins",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "10"
+      ],
+      "expectedTool": "get_recent_games",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.5,
+      "costUsd": 0.00047530000000000006
+    },
+    {
+      "id": "game-opening",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "A00",
+      "accepted": [
+        "A00"
+      ],
+      "expectedTool": "get_game",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_game",
+          "input": {
+            "game": "L07dBpjM"
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.8,
+      "costUsd": 0.00061439
+    },
+    {
+      "id": "game-opening",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "A00"
+      ],
+      "expectedTool": "get_game",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.3,
+      "costUsd": 0.0004579
+    },
+    {
+      "id": "game-tenth-move",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "axb4",
+      "accepted": [
+        "axb4"
+      ],
+      "expectedTool": "get_game",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_game",
+          "input": {
+            "game": "https://lichess.org/L07dBpjM"
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 5.2,
+      "costUsd": 0.00083684
+    },
+    {
+      "id": "game-tenth-move",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "axb4"
+      ],
+      "expectedTool": "get_game",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.3,
+      "costUsd": 0.0005109
+    },
+    {
+      "id": "chain-last-game-first-move",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "b4",
+      "accepted": [
+        "b4"
+      ],
+      "expectedTool": "get_recent_games",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_recent_games",
+          "input": {
+            "username": "DrNykterstein",
+            "max": 1,
+            "withMoves": true
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.6,
+      "costUsd": 0.00064429
+    },
+    {
+      "id": "chain-last-game-first-move",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "b4"
+      ],
+      "expectedTool": "get_recent_games",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.2,
+      "costUsd": 0.0004826
+    },
+    {
+      "id": "daily-puzzle",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "h6h8",
+      "accepted": [
+        "h6h8"
+      ],
+      "expectedTool": "get_daily_puzzle",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_daily_puzzle",
+          "input": {}
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.2,
+      "costUsd": 0.00048479
+    },
+    {
+      "id": "daily-puzzle",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "h6h8"
+      ],
+      "expectedTool": "get_daily_puzzle",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.1,
+      "costUsd": 0.0004192
+    },
+    {
+      "id": "cloud-eval-given-fen",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "g8f6",
+      "accepted": [
+        "g8f6"
+      ],
+      "expectedTool": "get_cloud_eval",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_cloud_eval",
+          "input": {
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+            "lines": 1
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.9,
+      "costUsd": 0.00059606
+    },
+    {
+      "id": "cloud-eval-given-fen",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "g8f6"
+      ],
+      "expectedTool": "get_cloud_eval",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 5,
+      "costUsd": 0.0006511
+    },
+    {
+      "id": "cloud-eval-from-moves",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "c7c6",
+      "accepted": [
+        "c7c6"
+      ],
+      "expectedTool": "get_cloud_eval",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_cloud_eval",
+          "input": {
+            "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 1",
+            "lines": 1
+          }
+        },
+        {
+          "name": "explore_masters",
+          "input": {
+            "fen": "rnbqkbnr/ppp1pppp/8/3p4/2PP4/8/PP2PPPP/RNBQKBNR b KQkq - 0 1",
+            "moves": 5
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 3,
+      "seconds": 5.3,
+      "costUsd": 0.0010124700000000001
+    },
+    {
+      "id": "cloud-eval-from-moves",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "c7c6"
+      ],
+      "expectedTool": "get_cloud_eval",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.9,
+      "costUsd": 0.0004832
+    },
+    {
+      "id": "masters-most-played",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "d6",
+      "accepted": [
+        "d6"
+      ],
+      "expectedTool": "explore_masters",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "explore_masters",
+          "input": {
+            "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+            "moves": 5
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.3,
+      "costUsd": 0.00063166
+    },
+    {
+      "id": "masters-most-played",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "d6"
+      ],
+      "expectedTool": "explore_masters",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 4.6,
+      "costUsd": 0.0005681
+    },
+    {
+      "id": "masters-game-count",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "82791",
+      "accepted": [
+        "82791"
+      ],
+      "expectedTool": "explore_masters",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "explore_masters",
+          "input": {
+            "fen": "rnbqk2r/ppppppbp/5np1/8/2PP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+            "moves": 5
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 5.2,
+      "costUsd": 0.0006231
+    },
+    {
+      "id": "masters-game-count",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "82791"
+      ],
+      "expectedTool": "explore_masters",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.4,
+      "costUsd": 0.0004706
+    },
+    {
+      "id": "masters-draw-rate",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "44.2",
+      "accepted": [
+        "44.19204413683489"
+      ],
+      "expectedTool": "explore_masters",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "explore_masters",
+          "input": {
+            "fen": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+            "moves": 1
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.3,
+      "costUsd": 0.0005675000000000001
+    },
+    {
+      "id": "masters-draw-rate",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "44.19204413683489"
+      ],
+      "expectedTool": "explore_masters",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 4,
+      "costUsd": 0.0005222
+    },
+    {
+      "id": "tablebase-only-win",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "Kb3",
+      "accepted": [
+        "Kb3"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "probe_tablebase",
+          "input": {
+            "fen": "8/8/8/1k6/8/8/1PK5/8 w - - 0 1",
+            "moves": 8
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 5.3,
+      "costUsd": 0.0006886100000000001
+    },
+    {
+      "id": "tablebase-only-win",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "Kb3"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 16.6,
+      "costUsd": 0.0018046
+    },
+    {
+      "id": "tablebase-only-draw",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "b5",
+      "accepted": [
+        "b5"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "probe_tablebase",
+          "input": {
+            "fen": "8/8/1p6/8/1P6/k7/8/1K6 w - - 0 1",
+            "moves": 10
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 5.2,
+      "costUsd": 0.00059986
+    },
+    {
+      "id": "tablebase-only-draw",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "b5",
+      "accepted": [
+        "b5"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 21.1,
+      "costUsd": 0.0021358
+    },
+    {
+      "id": "tablebase-black-holds",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "Ke4",
+      "accepted": [
+        "Ke4"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "probe_tablebase",
+          "input": {
+            "fen": "8/8/8/8/5k2/8/4PK2/8 b - - 0 1",
+            "moves": 40
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.7,
+      "costUsd": 0.0006863399999999999
+    },
+    {
+      "id": "tablebase-black-holds",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "Ke4"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 14.5,
+      "costUsd": 0.001478
+    },
+    {
+      "id": "tablebase-result",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "Draw",
+      "accepted": [
+        "draw"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "probe_tablebase",
+          "input": {
+            "fen": "8/8/4k3/8/2r5/4P3/4K3/7R w - - 0 1",
+            "moves": 3
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.4,
+      "costUsd": 0.00065323
+    },
+    {
+      "id": "tablebase-result",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "draw",
+      "accepted": [
+        "draw"
+      ],
+      "expectedTool": "probe_tablebase",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 4.9,
+      "costUsd": 0.0006758
+    },
+    {
+      "id": "leaderboard-first",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "Unicorn7Love",
+      "accepted": [
+        "Unicorn7Love"
+      ],
+      "expectedTool": "get_leaderboard",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_leaderboard",
+          "input": {
+            "perfType": "rapid",
+            "count": 1
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4,
+      "costUsd": 0.00046716
+    },
+    {
+      "id": "leaderboard-first",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "Unicorn7Love"
+      ],
+      "expectedTool": "get_leaderboard",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 3.8,
+      "costUsd": 0.0004496
+    },
+    {
+      "id": "leaderboard-third-rating",
+      "condition": "with-server",
+      "modelId": "claude-haiku-5-5",
+      "correct": true,
+      "answer": "3329",
+      "accepted": [
+        "3329"
+      ],
+      "expectedTool": "get_leaderboard",
+      "usedExpectedTool": true,
+      "toolCalls": [
+        {
+          "name": "get_leaderboard",
+          "input": {
+            "perfType": "bullet",
+            "count": 3
+          }
+        }
+      ],
+      "toolErrors": 0,
+      "turns": 2,
+      "seconds": 4.3,
+      "costUsd": 0.00047358000000000003
+    },
+    {
+      "id": "leaderboard-third-rating",
+      "condition": "no-tools",
+      "modelId": "claude-haiku-5-5",
+      "correct": false,
+      "answer": "UNKNOWN",
+      "accepted": [
+        "3329"
+      ],
+      "expectedTool": "get_leaderboard",
+      "usedExpectedTool": false,
+      "toolCalls": [],
+      "toolErrors": 0,
+      "turns": 1,
+      "seconds": 2.8,
+      "costUsd": 0.0004291
+    }
+  ]
+}
